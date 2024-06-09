@@ -1,48 +1,52 @@
 <?php
-	$name = $_POST['name'];
-	$email = $_POST['email'];
-	$subject = $_POST['subject'];
-	$message = $_POST['message'];
+$name = isset($_POST['name']) ? $_POST['name'] : '';
+$email = isset($_POST['email']) ? $_POST['email'] : '';
+$subject = isset($_POST['subject']) ? $_POST['subject'] : '';
+$message = isset($_POST['message']) ? $_POST['message'] : '';
+if (!empty($name) && !empty($email) && !empty($subject) && !empty($message)) {
+    $host = "localhost";
+    $dbUsername = "root";
+    $dbPassword = "";
+    $dbname = "contact";
 
-	if (!empty($name) || !empty($email) || !empty($subject)) {
-		$host = "localhost";
-		$dbUsername = "root";
-		$dbPassword = "";
-		$dbName = "contact";
+    // Create connection
+    $conn = new mysqli($host, $dbUsername, $dbPassword, $dbname);
 
-		//Creating a connection
-		$conn = new mysqli($host, $dbUsername, $dbPassword, $dbName);
-		if(mysqli_connect_error()) {
-			die('Connection Error('. mysqli_connect_error().')'. mysqli_connect_error());
-		} else {
-			$SELECT = "SELECT email FROM contact_info WHERE email = ? LIMIT 1";
-			$INSERT = "INSERT INTO contact_info (name, email, subject, message) values (?, ?, ?, ?)";
+    // Check connection
+    if ($conn->connect_error) {
+        die('Connection Error (' . $conn->connect_errno . ') ' . $conn->connect_error);
+    } else {
+        $SELECT = "SELECT email FROM contact_info WHERE email = ? LIMIT 1";
+        $INSERT = "INSERT INTO contact_info (name, email, subject, message) values (?, ?, ?, ?)";
 
-			//Prepare Statement
-			$stmt = $conn->prepare($SELECT);
-			$stmt->$bind_param("s", $email);
-			$stmt->execute();
-			$stmt->bind_result($email);
-			$stmt->store_result();
-			$rnum = $stmt->num_rows;
-			
-			if($rnum==0) {
-				$stmt->close();
+        // Prepare statement
+        if ($stmt = $conn->prepare($SELECT)) {
+            $stmt->bind_param("s", $email);
+            $stmt->execute();
+            $stmt->bind_result($email);
+            $stmt->store_result();
+            $rnum = $stmt->num_rows;
 
-				$stmt = $conn->prepare($INSERT);
-				$ismt->bind_param("ssss", $name, $email, $subject, $message);
-				$stmt->execute();
-				echo "New record inserted successfully";
-			} else {
-				echo "Already exists this email";
-			}
-			$stmt->close();
-			$conn->close();
+            if ($rnum == 0) {
+                $stmt->close();
 
-		}
-
-	}else {
-		echo "All field are required.";
-		die();
-	}
+                if ($stmt = $conn->prepare($INSERT)) {
+                    $stmt->bind_param("ssss", $name, $email, $subject, $message);
+                    $stmt->execute();
+                    echo "New record inserted successfully";
+                } else {
+                    echo "Error preparing INSERT statement: " . $conn->error;
+                }
+            } else {
+                echo "This email already exists";
+            }
+            $stmt->close();
+        } else {
+            echo "Error preparing SELECT statement: " . $conn->error;
+        }
+        $conn->close();
+    }
+} else {
+    echo "All fields are required.";
+}
 ?>
