@@ -272,18 +272,3 @@
 
 
 //Google recaptcha
-function onSubmit(token) {
-  document.getElementById("form").submit();
-}
-
-function validateForm() {
-  var response = grecaptcha.getResponse();
-  if (response.length === 0) {
-      // reCAPTCHA not completed, prevent form submission
-      alert("Please complete the reCAPTCHA challenge.");
-      return false;
-  } else {
-      // reCAPTCHA completed, allow form submission
-      return true;
-  }
-}
