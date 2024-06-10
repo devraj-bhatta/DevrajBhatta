@@ -272,11 +272,18 @@
 
 
 //Google recaptcha
-var form = document.getElementById('#form');
-form.addEventListener("submit", function(event){
-    if (grecaptcha.getResponse() === '') {                            
-      event.preventDefault();
-      alert('Please check the recaptcha');
-    }
+function onSubmit(token) {
+  document.getElementById("form").submit();
+}
+
+function validateForm() {
+  var response = grecaptcha.getResponse();
+  if (response.length === 0) {
+      // reCAPTCHA not completed, prevent form submission
+      alert("Please complete the reCAPTCHA challenge.");
+      return false;
+  } else {
+      // reCAPTCHA completed, allow form submission
+      return true;
   }
-, false);
+}
