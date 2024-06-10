@@ -272,9 +272,11 @@
 
 
 //Google recaptcha
-$('form').submit(function(event) {
-  if ( $('.g-recaptcha').val() === '' ) {
+var form = document.getElementById('#form');
+form.addEventListener("submit", function(event){
+    if (grecaptcha.getResponse() === '') {                            
       event.preventDefault();
       alert('Please check the recaptcha');
+    }
   }
-});
+, false);
