@@ -710,6 +710,11 @@
 
   <!--Google Recaptcha JS File-->
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <script type="text/javascript">
+    var onloadCallback = function() {
+      alert("grecaptcha is ready!");
+    };
+  </script>
 
   <!-- Embedded LinkedIn -->
   <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
