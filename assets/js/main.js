@@ -269,3 +269,12 @@
   new PureCounter();
 
 })()
+
+
+//Google recaptcha
+window.addEventListener('load', () => {
+  const $recaptcha = document.querySelector('.g-recaptcha');
+  if ($recaptcha) {
+    $recaptcha.setAttribute('required', 'required');
+  }
+})

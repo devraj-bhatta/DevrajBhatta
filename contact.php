@@ -9,17 +9,17 @@ if (!empty($name) && !empty($email) && !empty($subject) && !empty($message)) {
     $dbPassword = "";
     $dbname = "contact";
 
-    // Create connection
+
     $conn = new mysqli($host, $dbUsername, $dbPassword, $dbname);
 
-    // Check connection
+
     if ($conn->connect_error) {
         die('Connection Error (' . $conn->connect_errno . ') ' . $conn->connect_error);
     } else {
         $SELECT = "SELECT email FROM contact_info WHERE email = ? LIMIT 1";
         $INSERT = "INSERT INTO contact_info (name, email, subject, message) values (?, ?, ?, ?)";
 
-        // Prepare statement
+
         if ($stmt = $conn->prepare($SELECT)) {
             $stmt->bind_param("s", $email);
             $stmt->execute();
