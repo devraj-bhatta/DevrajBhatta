@@ -272,10 +272,9 @@
 
 
 //Google recaptcha
-window.onload = function () {
-  var $recaptcha = document.querySelector('#g-recaptcha-response');
-
-  if ($recaptcha) {
-    $recaptcha.setAttribute("required", "required");
+$('form').submit(function(event) {
+  if ( $('.g-recaptcha').val() === '' ) {
+      event.preventDefault();
+      alert('Please check the recaptcha');
   }
-};
+});
