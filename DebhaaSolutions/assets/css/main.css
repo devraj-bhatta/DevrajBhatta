@@ -1696,3 +1696,12 @@ section,
 .starter-section {
   /* Add your styles here */
 }
+
+.form button{
+  background: #3498db;
+  border: 0;
+  padding: 10px 35px;
+  color: #fff;
+  transition: 0.4s;
+  border-radius: 50px;
+}

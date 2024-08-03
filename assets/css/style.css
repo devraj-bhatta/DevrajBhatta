@@ -1097,7 +1097,7 @@ ul a #download-resume {
   padding: 10px 12px;
 }
 
-.contact .php-email-form button[type=submit] {
+.contact  button[type=submit] {
   background: #0563bb;
   border: 0;
   padding: 10px 35px;
@@ -1189,4 +1189,9 @@ ul a #download-resume {
 
 #footer .credits {
   font-size: 13px;
+}
+
+.debhaasolutions a {
+  color: white;
+
 }
