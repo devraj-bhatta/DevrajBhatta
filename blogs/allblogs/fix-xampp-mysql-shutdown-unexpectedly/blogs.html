@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Fix Xampp MySQL Shutdown Unexpectedly</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Font awesome icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+    crossorigin="anonymous" />
+    <link rel="icon" type="image/x-icon" href="./blogsimages/Devraj - img.jpeg">
+  <link rel="stylesheet" href="blogs.css">
+</head>
+
+<body>
+
+
+  <!-- design -->
+  <section class="design" id="design">
+    <div class="container">
+      <div class="title">
+        <h2>Fix Xampp MySQL Shutdown Unexpectedly</h2>
+      </div>
+
+      <div class="design-content">
+        <!-- item -->
+        <div class="design-item">
+          <div class="design-img">
+            <img src="./blogsimages/banner.png" alt="">
+          </div>
+          <div class="design-title">
+            <p class="author-date">20th Jan 2025</p>
+          </div>
+          <div class="blog-description">
+              <p>Have you ever tried to start MySQL in XAMPP and been hit with the frustrating “MySQL shutdown unexpectedly” error? Don’t worry, you are not alone in facing this problem, and the fixing process is easier than you think! <br>
+              In this post, I will explain why this problem occurs and how to fix it step-by-step with examples to make it super clear for you. Let’s get started. </p> <br><br>
+              <p class="headingone">Why does the “MySQL Shutdown Unexpectedly” Error Happen? </p>
+              <p>The error can occur when MySQL cannot start properly in XAMPP. The common two reasons for this are: </p> <br>
+              <p class="headingtwo">1. Port Number Conflict </p>
+              <p>MySQL and any other database server programs (or even another MySQL server) use the same port number. Since one program can use a port number at a time, this creates a conflict between them and stop MySQL from running. <br> <br>
+              Example: Let’s say MySQL server is set to use port number 3306, and another application (e.g., Skype or another database server) is also using port number 3306. In this situation, MySQL will not start because the same port number is already used by another program or already taken. </p> <br><br>
+              <p class="headingtwo">2. XAMPP Blocking the Port </p>
+              <p>Sometimes, XAMPP itself blocks MySQL’s port. It usually happens due to leftover lock files, misconfigurations, or a crashed MySQL process. This happens when XAMPP cannot connect properly MySQL to its default port. <br> <br>
+              Example: If your MySQL crashed unexpectedly in the past, and XAMPP is now trying to access the same port number 3306. But because of leftover crash files or a misconfigured setup, it keeps blocking access. </p> <br><br>
+              <p class="headingtwo">3. Insufficient Permission </p>
+              <p>If XAMPP doesn’t have the right permissions to access certain files or folders required by MySQL, it may block MySQL from running and the error occurs. <br> <br>
+              Example: You installed XAMPP in a folder like C:/Program Files instead of C:/xampp, and Windows’ security settings are preventing XAMPP from modifying files in that directory. <br> <br>
+              Now you may know how does the error happens, and I hope you will try to not do such things to avoid from the error. </p> <br><br>
+              <p class="headingone">How to fix it? Step by step guide</p>
+              <p class="headingtwo">Step 1: Open your XAMPP control panel and click on the Config of the module MySQL, where you are getting an error, then click on my.ini.</p>
+              <img src="./blogsimages/step1.png"> <br><br> <br>
+
+              <p class="headingtwo">Step 2: Search for port=3306 and change it to port=3307. If your port is already 3307, then upgrade by 1, which is 3308. And finally, save this file by clicking File>Save or you can use the shortcut also to save it, for Windows Ctrl + S and for Mac Cmd+S.</p>
+              <img src="./blogsimages/step2.png"> <br><br> <br>
+
+              <p class="headingtwo">Step 3: Now, click on the Explorer of the XAMPP Control Panel. It redirects you to the File Explorer on C://xampp (where your XAMPP is installed) location. Then, search for phpMyAdmin and click on that. It opens the files and folders inside phpMyAdmin, then searches for config.inc. Most importantly, open the config.inc file in Notepad (click on config.inc just for one, then right-click on the mouse, then click on Open with and search for Notepad software, and then click on that).</p>
+              <img src="./blogsimages/step3.png"> <br><br> <br>
+
+              <p class="headingtwo">Step 4: In step 4, search for, <span class="code">/* Bind to the localhost ipv4 address and tcp */</span>, then remove the last line, which is a black overlap in the given picture below. Then, add a new line as shown in the picture. Make sure you have added the port number that you entered earlier; in my case, I have added 3307. Also, don’t make any typological error on this. So, please verify the line you have added to make sure you have made no errors. Finally, save this file by clicking File>Save, or you can use the shortcut also to save it: for Windows, Ctrl + S, and for Mac, Cmd + S.</p>
+              <img src="./blogsimages/step4.png"> <br><br> <br>
+
+              <p class="headingtwo">Step 5: Finally, you have completed all your tasks to solve the error. Now, close the Xampp Control Panel and reopen it. Now, you won’t see the error because we have solved your error.</p>
+              <img src="./blogsimages/step5.png"> <br>
+
+              <p> Here, you can see the MySQL module is running in Xampp Control Panel without any error. Congrats to you.</p>
+
+              
+          </div>
+        </div>
+        <!-- end of item -->
+        <div class="blog-pagination">
+          <a href="#"> &larr; Previous </a>
+          <a href="#"> Next &rarr;</a>
+        </div>
+
+
+
+        <div class="newsletter-container">
+          <div class="newsletter-header">
+            <h2>Subscribe to Our Newsletter</h2>
+            <p class="description">Stay updated with our latest news and offers!</p>
+          </div>
+          
+          <form id="newsletterForm">
+            <input type="email" name="email" placeholder="Your email address" id="email" required>
+            <p id="emailError" class="hidden" style="color: red;"></p> <!-- Error message for email -->
+      
+            <!-- Human Verification Section -->
+            <div class="human-verification">
+              <label for="verification">
+                What is 
+                <span id="num1"></span> + <span id="num2"></span>?
+              </label>
+              <input type="number" id="verification" name="verification" required>
+              <input type="hidden" id="expectedAnswer" name="expectedAnswer">
+              <p id="verificationMessage" class="hidden"></p> <!-- For showing correct/incorrect message -->
+            </div>
+      
+            <button type="button" id="subscribeBtn" disabled>Subscribe</button>
+          </form>
+          <p class="small-text">Your email is safe with us. We don’t spam.</p>
+          <p id="thankYouMessage" class="hidden" style="color: green;"></p> <!-- For showing thank you message -->
+        </div> <!-- End Verification -->
+
+      </div>
+    </div>
+  </section>
+  <!-- end of design -->
+
+
+  <script>
+    // Generate random numbers for human verification
+const num1 = Math.floor(Math.random() * 10) + 1;
+const num2 = Math.floor(Math.random() * 10) + 1;
+const expectedAnswer = num1 + num2;
+
+// Set question text and expected answer
+document.getElementById('num1').textContent = num1;
+document.getElementById('num2').textContent = num2;
+document.getElementById('expectedAnswer').value = expectedAnswer;
+
+// Elements
+const verificationInput = document.getElementById('verification');
+const verificationMessage = document.getElementById('verificationMessage');
+const subscribeBtn = document.getElementById('subscribeBtn');
+const thankYouMessage = document.getElementById('thankYouMessage');
+const emailInput = document.getElementById('email');
+const emailError = document.getElementById('emailError');
+
+// Add event listener for verification input
+verificationInput.addEventListener('input', () => {
+  const userAnswer = parseInt(verificationInput.value, 10);
+
+  if (!userAnswer) {
+    // Reset button and message if input is empty
+    subscribeBtn.disabled = true;
+    subscribeBtn.style.opacity = 0.5;
+    verificationMessage.className = 'hidden';
+    return;
+  }
+
+  if (userAnswer === expectedAnswer) {
+    // If answer is correct
+    verificationMessage.textContent = 'Correct!';
+    verificationMessage.style.color = 'green';
+    verificationMessage.className = 'visible';
+    subscribeBtn.disabled = false;
+    subscribeBtn.style.opacity = 1;
+  } else {
+    // If answer is incorrect
+    verificationMessage.textContent = 'Incorrect! Please try again.';
+    verificationMessage.style.color = 'red';
+    verificationMessage.className = 'visible';
+    subscribeBtn.disabled = true;
+    subscribeBtn.style.opacity = 0.5;
+  }
+});
+
+// Add event listener for email input to validate the email format
+emailInput.addEventListener('input', () => {
+  const emailValue = emailInput.value;
+  if (emailValue && !validateEmail(emailValue)) {
+    emailError.textContent = 'Please enter a valid email address.';
+    emailError.style.color = 'red';  // Red color for error message
+    emailError.className = 'visible';
+  } else {
+    emailError.className = 'hidden'; // Hide error message if valid email
+  }
+});
+
+// Function to validate email format (simple check)
+function validateEmail(email) {
+  // Basic email validation with @ symbol
+  return /\S+@\S+\.\S+/.test(email);
+}
+
+// Handle form submission and show thank you message
+subscribeBtn.addEventListener('click', () => {
+  const email = emailInput.value;
+  
+  // Check if email field is empty
+  if (!email) {
+    emailError.textContent = 'Please enter your email address.';
+    emailError.style.color = 'red';  // Red color for error message
+    emailError.className = 'visible';  // Ensure the message is visible
+    return;
+  } 
+  // Check if email is in the correct format
+  else if (!validateEmail(email)) {
+    emailError.textContent = 'Please enter a valid email address.';
+    emailError.style.color = 'red';  // Red color for invalid email
+    emailError.className = 'visible';
+    return;
+  }
+
+  // Check if verification answer is correct
+  if (email && verificationInput.value == expectedAnswer) {
+    // Show thank you message
+    thankYouMessage.textContent = `Thank you for subscribing with ${email}!`;
+    thankYouMessage.style.color = 'green';  // Green color for thank you message
+    thankYouMessage.className = 'visible';
+    
+    // Optionally, clear the form after submission
+    document.getElementById('newsletterForm').reset();
+    subscribeBtn.disabled = true;
+  }
+});
+  </script>
+</body>
+
+</html>

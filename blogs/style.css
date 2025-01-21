@@ -65,6 +65,7 @@ header{
     display: flex;
     justify-content: space-between;
 }
+ 
 .search-input{
     font-family: var(--Roboto);
     font-size: 1.1rem;
@@ -89,8 +90,21 @@ header{
 .spam {
     margin-top: 4px;
     font-size: 14px;
-
 }
+
+
+.hidden {
+    display: none;
+}
+
+.warning {
+    color: yellow; /* Yellow for warnings */
+}
+
+.success {
+    color: rgb(0, 255, 0); /* Green for success */
+}
+
 
 /* design */
 .design{
@@ -172,7 +186,7 @@ header{
     padding: 4.5rem 0;
 }
 .blog-content{
-    margin: 2rem 0;
+    margin: 2rem 0 0;
 }
 .blog-img{
     position: relative;
@@ -193,17 +207,15 @@ header{
 .blog-text span{
     font-weight: 300;
     display: block;
-    padding-bottom: 0.5rem;
 }
 .blog-text h2{
-    font-family: var(--Playfair);
-    padding: 1rem 0;
+    padding: 0 0 6px 0;
     font-size: 1.65rem;
-    font-weight: 500;
+    font-weight: bold;
 }
 .blog-text p{
     font-weight: 300;
-    font-size: 1.1rem;
+    font-size: 16px;
     opacity: 0.9;
     padding-bottom: 1.2rem;
 }

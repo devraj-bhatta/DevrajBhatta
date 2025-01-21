@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Escape The Screen, Own Your Life</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Font awesome icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+    crossorigin="anonymous" />
+    <link rel="icon" type="image/x-icon" href="./blogsimages/Devraj - img.jpeg">
+  <link rel="stylesheet" href="blogs.css">
+</head>
+
+<body>
+
+
+  <!-- design -->
+  <section class="design" id="design">
+    <div class="container">
+      <div class="title">
+        <h2>Escape The Screen, Own Your Life</h2>
+      </div>
+
+      <div class="design-content">
+        <!-- item -->
+        <div class="design-item">
+          <div class="design-img">
+            <img src="./blogsimages/banner.jpg" alt="">
+          </div>
+          <div class="design-title">
+            <p class="author-date">20th Jan 2025</p>
+          </div>
+          <div class="blog-description">
+
+<p>Do you keep procrastinating on important tasks? Do you have to finish work on time but spend all your time using your phone or scrolling social media? Do you feel excited to do some new task but you end up watching the funny videos? </p> <br><br>
+
+<p>Then, you are at the right place. To be honest, it was all my jobs a few months ago. I used to see my phone more than 14/15 hours a day. Really? Wasting my 15 hours watching the random reels on Instagram? It was more than an addiction!  And now I have changed myself from getting distracted over small things and started focusing on what matters. In this post, I will share how I changed myself on at least these things. </p> <br><br>
+
+<p>There can be multiple reasons that you are using your phone more than needed. Maybe, most of your mobile usage is on social media platforms. Maybe, you are addicted to social media’s content, UI UX, and other kinds of stuff. Well, they are spending billions of dollars each year to adopt different algorithms for making your long usage and keeping you engaged on their platforms. Recommendation Algorithms, Social Validation Algorithms, Dopamine Feedback Loops, and Search Ranking Algorithms are some popular algorithms they are using. So, it’s a sure thing that you are addicted to it and I will tell you how you can overcome these addictions. </p> <br><br>
+
+<p>Addiction is directly related to dopamine. Maybe you have already heard about the term dopamine. People call it the chemical of want and desire. Actually, <i>“Dopamine is a neurotransmitter which makes us anticipate rewards such as having sexual relationships or eating nourishing food.”</i> said <a href="https://whatispersonaldevelopment.org/" style="text-decoration: none;">Thibaut Meurisse</a> in his book “Dopamine Detox”. Whenever you scroll social media, watch funny videos, check your portfolio, or watch p*rns you will get a hit of dopamine and you will feel happy for a short period. </p> <br><br>
+
+<p>At this point, you have known why you use social media more than needed, why you are addicted to it, what is dopamine and how it works. Now, you have to overcome all these negative habits, addictions, and stop procrastinating. The best way to overcome procrastination is just by not doing it. Writer Thibaut Meurisse gives the three-step methods for a successful detox; Identify your biggest distractions, add friction, and start first thing in the morning. Additionally, I want to share top 4 habits that helped me to remove my phone addiction. </p> <br>
+
+<ul>
+  <li>Commit yourself to not using your phone for more than ...hour.</li>
+  <li>Try to put your phone far from you, especially not in your bed.</li>
+  <li>Customize the theme (greyscale), turn off notifications, and change your lock screen password to a harder one.</li>
+  <li>Set a time limit before using it.</li>
+</ul> <br><br>
+
+<p>If you are here at the end of the post, you really want to remove your phone addiction and other distractions. But actually, you don’t need any blogs, videos, news, suggestions, or anything to get away from this. At last, the best way to remove phone use is by not using it. </p> <br><br>
+<p>Happy journey! </p>
+
+          </div>
+        </div>
+        <!-- end of item -->
+        <div class="blog-pagination">
+          <a href="#"> &larr; Previous </a>
+          <a href="#"> Next &rarr;</a>
+        </div>
+
+
+
+        <div class="newsletter-container">
+          <div class="newsletter-header">
+            <h2>Subscribe to Our Newsletter</h2>
+            <p class="description">Stay updated with our latest news and offers!</p>
+          </div>
+          
+          <form id="newsletterForm">
+            <input type="email" name="email" placeholder="Your email address" id="email" required>
+            <p id="emailError" class="hidden" style="color: red;"></p> <!-- Error message for email -->
+      
+            <!-- Human Verification Section -->
+            <div class="human-verification">
+              <label for="verification">
+                What is 
+                <span id="num1"></span> + <span id="num2"></span>?
+              </label>
+              <input type="number" id="verification" name="verification" required>
+              <input type="hidden" id="expectedAnswer" name="expectedAnswer">
+              <p id="verificationMessage" class="hidden"></p> <!-- For showing correct/incorrect message -->
+            </div>
+      
+            <button type="button" id="subscribeBtn" disabled>Subscribe</button>
+          </form>
+          <p class="small-text">Your email is safe with us. We don’t spam.</p>
+          <p id="thankYouMessage" class="hidden" style="color: green;"></p> <!-- For showing thank you message -->
+        </div> <!-- End Verification -->
+
+      </div>
+    </div>
+  </section>
+  <!-- end of design -->
+
+
+  <script>
+    // Generate random numbers for human verification
+const num1 = Math.floor(Math.random() * 10) + 1;
+const num2 = Math.floor(Math.random() * 10) + 1;
+const expectedAnswer = num1 + num2;
+
+// Set question text and expected answer
+document.getElementById('num1').textContent = num1;
+document.getElementById('num2').textContent = num2;
+document.getElementById('expectedAnswer').value = expectedAnswer;
+
+// Elements
+const verificationInput = document.getElementById('verification');
+const verificationMessage = document.getElementById('verificationMessage');
+const subscribeBtn = document.getElementById('subscribeBtn');
+const thankYouMessage = document.getElementById('thankYouMessage');
+const emailInput = document.getElementById('email');
+const emailError = document.getElementById('emailError');
+
+// Add event listener for verification input
+verificationInput.addEventListener('input', () => {
+  const userAnswer = parseInt(verificationInput.value, 10);
+
+  if (!userAnswer) {
+    // Reset button and message if input is empty
+    subscribeBtn.disabled = true;
+    subscribeBtn.style.opacity = 0.5;
+    verificationMessage.className = 'hidden';
+    return;
+  }
+
+  if (userAnswer === expectedAnswer) {
+    // If answer is correct
+    verificationMessage.textContent = 'Correct!';
+    verificationMessage.style.color = 'green';
+    verificationMessage.className = 'visible';
+    subscribeBtn.disabled = false;
+    subscribeBtn.style.opacity = 1;
+  } else {
+    // If answer is incorrect
+    verificationMessage.textContent = 'Incorrect! Please try again.';
+    verificationMessage.style.color = 'red';
+    verificationMessage.className = 'visible';
+    subscribeBtn.disabled = true;
+    subscribeBtn.style.opacity = 0.5;
+  }
+});
+
+// Add event listener for email input to validate the email format
+emailInput.addEventListener('input', () => {
+  const emailValue = emailInput.value;
+  if (emailValue && !validateEmail(emailValue)) {
+    emailError.textContent = 'Please enter a valid email address.';
+    emailError.style.color = 'red';  // Red color for error message
+    emailError.className = 'visible';
+  } else {
+    emailError.className = 'hidden'; // Hide error message if valid email
+  }
+});
+
+// Function to validate email format (simple check)
+function validateEmail(email) {
+  // Basic email validation with @ symbol
+  return /\S+@\S+\.\S+/.test(email);
+}
+
+// Handle form submission and show thank you message
+subscribeBtn.addEventListener('click', () => {
+  const email = emailInput.value;
+  
+  // Check if email field is empty
+  if (!email) {
+    emailError.textContent = 'Please enter your email address.';
+    emailError.style.color = 'red';  // Red color for error message
+    emailError.className = 'visible';  // Ensure the message is visible
+    return;
+  } 
+  // Check if email is in the correct format
+  else if (!validateEmail(email)) {
+    emailError.textContent = 'Please enter a valid email address.';
+    emailError.style.color = 'red';  // Red color for invalid email
+    emailError.className = 'visible';
+    return;
+  }
+
+  // Check if verification answer is correct
+  if (email && verificationInput.value == expectedAnswer) {
+    // Show thank you message
+    thankYouMessage.textContent = `Thank you for subscribing with ${email}!`;
+    thankYouMessage.style.color = 'green';  // Green color for thank you message
+    thankYouMessage.className = 'visible';
+    
+    // Optionally, clear the form after submission
+    document.getElementById('newsletterForm').reset();
+    subscribeBtn.disabled = true;
+  }
+});
+  </script>
+</body>
+
+</html>
