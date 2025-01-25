@@ -617,6 +617,7 @@ ul a #download-resume {
   display: inline;
   margin-left: 20px;
 }
+
 .col-lg-6 .read-blog a {
   color: white;
 }
@@ -926,6 +927,127 @@ ul a #download-resume {
 }
 
 /*--------------------------------------------------------------
+
+# Services
+--------------------------------------------------------------*/
+.blogs .icon-box {
+  text-align: center;
+  padding: 20px 20px 20px 20px;
+  transition: all ease-in-out 0.3s;
+  background: #fff;
+  margin: 10px 0px;
+  box-shadow: 0px 5px 90px 0px rgba(110, 123, 131, 0.05);
+}
+
+.blogs .icon-box .icon {
+  margin: 0 auto;
+  width: 100px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: ease-in-out 0.3s;
+  position: relative;
+}
+
+.blogs .blog-author {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.blogs .icon-box .blog-author i {
+  font-size: 14px;
+  transition: 0.5s;
+  color: #45505b;
+  letter-spacing: 2px;
+  position: relative;
+  display: inline;
+}
+
+.blogs .icon-box .blog-author .second {
+  margin-left: 30px;
+}
+
+.blogs .icon-box .blog-author p {
+  color: #45505b;
+  font-size: 10px;
+  position: relative;
+  text-transform: none;
+  display: inline;
+  margin-bottom: 0px;
+  margin-left: 2px;
+}
+
+.blogs .icon-box .blog-author i,
+p {}
+
+.blogs .icon-box .icon svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.blogs .icon-box .icon svg path {
+  transition: 0.5s;
+  fill: #f5f5f5;
+}
+
+.blogs .icon-box h4 {
+  font-weight: 600;
+  margin: 20px 0 4px 0;
+  font-size: 22px;
+}
+
+.blogs .icon-box h4 a {
+  color: #45505b;
+  transition: ease-in-out 0.3s;
+}
+
+.blogs .icon-box p {
+  line-height: 24px;
+  font-size: 12px;
+  color: #45505b;
+}
+
+.blogs .icon-box:hover {
+  border-color: #fff;
+  box-shadow: 0px 0 35px 0 rgba(0, 0, 0, 0.08);
+}
+/* Read More Blogs */
+
+.more-blogs {
+  background: #0563bb;
+  border: 0;
+  padding: 10px 16px;
+  color: #fff;
+  transition: 0.4s;
+  border-radius: 50px;
+  margin-left: 20px;
+  align-items: center;
+  display: inline-block;
+}
+
+.more-blogs a {
+  color: white;
+}
+
+.more-blogs:hover {
+  background: #0678e3;
+}
+
+.iconbox-blue.last-blogs {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  align-content: center;
+  align-self: center;
+}
+
+/*------------------------------------------------------------
 # Testimonials
 --------------------------------------------------------------*/
 .testimonials .section-header {
@@ -1123,7 +1245,7 @@ ul a #download-resume {
   padding: 10px 12px;
 }
 
-.contact  button[type=submit] {
+.contact button[type=submit] {
   background: #0563bb;
   border: 0;
   padding: 10px 35px;
@@ -1135,14 +1257,16 @@ ul a #download-resume {
 .sendmessage {
   background: #0563bb;
   border: 0;
-  padding: 10px 35px;
+  padding: 10px 20px;
   color: #fff;
   transition: 0.4s;
   border-radius: 50px;
 }
+
 .sendmessage:hover {
   background: #0678e3;
 }
+
 .contact .php-email-form button[type=submit]:hover {
   background: #0678e3;
 }
