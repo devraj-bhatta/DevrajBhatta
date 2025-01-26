@@ -793,6 +793,44 @@ ul a #download-resume {
   padding: 0;
 }
 
+.more-projects {
+  background: #0563bb;
+  border: 0;
+  padding: 10px 16px;
+  color: #fff;
+  transition: 0.4s;
+  border-radius: 50px;
+  margin-bottom: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.more-projects a {
+  color: white;
+}
+
+.more-projects:hover {
+  background: #0678e3;
+}
+.moreprojects {
+  display: flex;
+  justify-content: center;
+}
+
+.moreprojects h4 a {
+  display: block;
+  justify-content: center;
+  text-align: center;
+  color: #272829;
+}
+.moreprojects {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: auto;
+  margin: 0 auto;
+}
+
 /*--------------------------------------------------------------
 # Services
 --------------------------------------------------------------*/
