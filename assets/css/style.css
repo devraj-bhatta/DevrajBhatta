@@ -1505,7 +1505,7 @@ ul a #download-resume {
     }
 
     .blog-summary {
-      font-size: 14px;
+      font-size: 14px; 
       line-height: 1.6;
       color: var(--db-blog-text-muted);
       margin: 0;
